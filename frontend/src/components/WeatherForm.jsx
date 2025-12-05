@@ -12,7 +12,7 @@ const WeatherForm = () => {
       return;
     }
     try {
-      const response = await axios.get(`http://localhost:8080/api/v1/clima?pais=${pais}&ciudad=${ciudad}`);
+      const response = await axios.get(`http://localhost:8080/api/v1/clima/buscar?pais=${encodeURIComponent(pais)}&ciudad=${encodeURIComponent(ciudad)}`);
       setResultado(response.data);
     } catch (error) {
       console.error(error);

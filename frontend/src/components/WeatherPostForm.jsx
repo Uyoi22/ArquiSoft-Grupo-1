@@ -19,11 +19,13 @@ const WeatherPostForm = () => {
   const handleSubmit = async () => {
     try {
       const response = await axios.post('http://localhost:8080/api/v1/clima', {
-        ...form,
-        temperatura: parseFloat(form.temperatura),
-        sensacionTermica: parseFloat(form.sensacionTermica),
-        humedad: parseInt(form.humedad),
-        velocidadViento: parseFloat(form.velocidadViento)
+        pais: form.pais,
+        ciudad: form.ciudad,
+        temperatura: form.temperatura ? parseFloat(form.temperatura) : 0,
+        sensacionTermica: form.sensacionTermica ? parseFloat(form.sensacionTermica) : 0,
+        humedad: form.humedad ? parseInt(form.humedad) : 0,
+        descripcion: form.descripcion || '',
+        velocidadViento: form.velocidadViento ? parseFloat(form.velocidadViento) : 0
       });
       alert('Clima registrado correctamente');
       console.log(response.data);

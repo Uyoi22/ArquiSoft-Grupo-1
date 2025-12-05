@@ -20,7 +20,8 @@ import java.util.List;
 import static org.springframework.hateoas.server.mvc.WebMvcLinkBuilder.*;
 
 @RestController
-@RequestMapping("/api/v1/Weather")
+@RequestMapping("/api/v1/clima")
+@CrossOrigin(origins = "http://localhost:3000")
 @Tag(name = "Weather", description = "Gestión de datos climáticos por país y ciudad")
 public class WeatherController {
 
@@ -40,7 +41,7 @@ public class WeatherController {
             @RequestBody @io.swagger.v3.oas.annotations.parameters.RequestBody(description = "Datos climáticos a registrar", required = true, content = @Content(schema = @Schema(implementation = Weather.class))) Weather weather) {
 
         if (weather.getCountry() == null || weather.getCity() == null) {
-
+            return ResponseEntity.badRequest().body("{\"error\": \"País y ciudad son obligatorios\"}");
         }
 
         Weather saved = weatherService.saveWeather(weather);
@@ -63,10 +64,10 @@ public class WeatherController {
 
     @GetMapping("/buscar")
     public ResponseEntity<List<Weather>> searchWeather(
-            @RequestParam String country,
-            @RequestParam String city) {
+            @RequestParam("pais") String pais,
+            @RequestParam("ciudad") String ciudad) {
 
-        List<Weather> weatherList = weatherService.findByCountryAndCity(country, city);
+        List<Weather> weatherList = weatherService.findByCountryAndCity(pais, ciudad);
         return ResponseEntity.ok(weatherList);
     }
 }
