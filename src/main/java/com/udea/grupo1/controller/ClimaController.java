@@ -1,6 +1,6 @@
 package com.udea.grupo1.controller;
 
-import com.udea.grupo1.model.Clima;
+import com.udea.grupo1.entity.Clima;
 import com.udea.grupo1.service.ClimaService;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.http.HttpStatus;

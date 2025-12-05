@@ -1,6 +1,6 @@
 package com.udea.grupo1.service;
 
-import com.udea.grupo1.model.Clima;
+import com.udea.grupo1.entity.Clima;
 import com.udea.grupo1.repository.ClimaRepository;
 import org.springframework.stereotype.Service;
 
