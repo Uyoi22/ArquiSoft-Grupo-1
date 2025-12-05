@@ -1,0 +1,86 @@
+/* General */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e0f2fe, #fef9c3);
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centra horizontalmente */
+  min-height: 100vh;
+  padding: 30px 20px;
+}
+
+
+/* Título principal */
+h1 {
+  color: #0369a1;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Tarjetas */
+.card {
+  background-color: white;
+  padding: 25px 20px;
+  margin-bottom: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  width: 100%;
+  max-width: 500px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* Encabezados de tarjetas */
+.card h2, .card h3, .card h4 {
+  color: #0c4a6e;
+  margin-bottom: 15px;
+}
+
+/* Botones */
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background-color: #0284c7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+button:hover {
+  background-color: #0369a1;
+  transform: translateY(-2px);
+}
+
+/* JSON display */
+pre {
+  background-color: #f1f5f9;
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+  max-height: 300px;
+}
+
+/* Links HATEOAS */
+a {
+  color: #0284c7;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover {
+  color: #0369a1;
+  text-decoration: underline;
+}
