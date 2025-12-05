@@ -3,21 +3,32 @@ package com.udea.grupo1.entity;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 import java.time.LocalDateTime;
 
+@Schema(description = "Entidad que representa los datos climáticos de una ciudad en un país específico.")
 @Document(collection = "climas")
 public class Clima {
 
     @Id
+    @Schema(description = "Identificador único del registro climático", example = "609e125f5f1b2c0015b8e9b1", accessMode = Schema.AccessMode.READ_ONLY)
     private String id;
-
+    @Schema(description = "Nombre del país", example = "Colombia")
     private String pais;
+    @Schema(description = "Nombre de la ciudad", example = "Medellín")
     private String ciudad;
+    @Schema(description = "Temperatura actual en grados Celsius", example = "22.5")
     private double temperatura;
+    @Schema(description = "Sensación térmica en grados Celsius", example = "24.0")
     private double sensacionTermica;
+    @Schema(description = "Humedad relativa en porcentaje", example = "78")
     private int humedad;
+    @Schema(description = "Descripción general del clima", example = "Parcialmente nublado")
     private String descripcion;
+    @Schema(description = "Velocidad del viento en km/h", example = "15.0")
     private double velocidadViento;
+    @Schema(description = "Fecha y hora del registro climático", example = "2024-06-15T14:30:00", accessMode = Schema.AccessMode.READ_ONLY)
     private LocalDateTime fechaRegistro;
 
     public Clima() {
