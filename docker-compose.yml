@@ -1,0 +1,32 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATA_MONGODB_URI=mongodb://admin:password123@mongo:27017/weatherdb?authSource=admin
+    depends_on:
+      - mongo
+    networks:
+      - weather-network
+
+  mongo:
+    image: mongo:latest
+    container_name: weather_db
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: admin
+      MONGO_INITDB_ROOT_PASSWORD: password123
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - weather-network
+
+volumes:
+  mongo_data:
+
+networks:
+  weather-network:
+    driver: bridge
