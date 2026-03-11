@@ -105,7 +105,7 @@ class WeatherControllerTest {
 
         @Test
         @DisplayName("response body echoes created country and city (complex)")
-        void responseIncludesHateoasLinks() throws Exception {
+        void response201WithCountryAndCity() throws Exception {
             Weather request = new Weather();
             request.setCountry("Peru");
             request.setCity("Lima");
