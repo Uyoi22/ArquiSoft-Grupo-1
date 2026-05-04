@@ -1,6 +1,7 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=anagranada1_ArquiSoft-Grupo-1&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=anagranada1_ArquiSoft-Grupo-1)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=anagranada1_ArquiSoft-Grupo-1&metric=coverage)](https://sonarcloud.io/summary/new_code?id=anagranada1_ArquiSoft-Grupo-1)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=anagranada1_ArquiSoft-Grupo-1&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=anagranada1_ArquiSoft-Grupo-1)
+
 # Parcial Práctico de Arquitectura de Software - Grupo 1
 
 ## 👥 Equipo
